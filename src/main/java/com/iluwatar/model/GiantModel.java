@@ -1,19 +1,14 @@
 package com.iluwatar.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GiantModel {
     private Health health;
     private Fatigue fatigue;
     private Nourishment nourishment;
-    private GiantModelsList giantModelsList = new GiantModelsList();
 
     public GiantModel(Health health, Fatigue fatigue, Nourishment nourishment) {
         this.health = health;
         this.fatigue = fatigue;
         this.nourishment = nourishment;
-        giantModelsList.setGiantModelsList(this);
     }
 
     public Health getHealth() {

@@ -1,45 +1,44 @@
 package com.iluwatar.controller;
 
-import com.iluwatar.model.Fatigue;
+import com.iluwatar.model.*;
 import com.iluwatar.view.GiantView;
-import com.iluwatar.model.Health;
-import com.iluwatar.model.Nourishment;
-import com.iluwatar.model.GiantModel;
+
+import java.util.List;
 
 public class GiantController {
-    private GiantModel giantModel;
     private GiantView giantView;
+    private List<GiantModel> giantModel;
 
-    public GiantController(GiantModel giantModel, GiantView giantView) {
+    public GiantController(List<GiantModel> giantModel, GiantView giantView) {
         this.giantModel = giantModel;
         this.giantView = giantView;
     }
 
-    public Health getHealth() {
-        return giantModel.getHealth();
+    public Health getHealth(int giant) {
+        return giantModel.get(giant).getHealth();
     }
 
-    public void setHealth(Health health) {
-        this.giantModel.setHealth(health);
+    public void setHealth(int giant, Health health) {
+        this.giantModel.get(giant).setHealth(health);
     }
 
-    public Fatigue getFatigue() {
-        return giantModel.getFatigue();
+    public Fatigue getFatigue(int giant) {
+        return giantModel.get(giant).getFatigue();
     }
 
-    public void setFatigue(Fatigue fatigue) {
-        this.giantModel.setFatigue(fatigue);
+    public void setFatigue(int giant, Fatigue fatigue) {
+        this.giantModel.get(giant).setFatigue(fatigue);
     }
 
-    public Nourishment getNourishment() {
-        return giantModel.getNourishment();
+    public Nourishment getNourishment(int giant) {
+        return giantModel.get(giant).getNourishment();
     }
 
-    public void setNourishment(Nourishment nourishment) {
-        this.giantModel.setNourishment(nourishment);
+    public void setNourishment(int giant, Nourishment nourishment) {
+        this.giantModel.get(giant).setNourishment(nourishment);
     }
 
-    public void updateView() {
-        this.giantView.displayGiant(giantModel);
+    public void updateView(int giant) {
+        this.giantView.displayGiant(giantModel.get(giant));
     }
 }
