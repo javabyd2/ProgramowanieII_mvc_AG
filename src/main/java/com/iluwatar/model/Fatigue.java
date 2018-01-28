@@ -5,7 +5,7 @@ public enum Fatigue {
 
     private String title;
 
-    Fatigue(String title){
+    Fatigue(String title) {
         this.title = title;
     }
 

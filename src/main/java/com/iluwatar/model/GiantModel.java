@@ -1,14 +1,19 @@
 package com.iluwatar.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GiantModel {
     private Health health;
     private Fatigue fatigue;
     private Nourishment nourishment;
+    private GiantModelsList giantModelsList = new GiantModelsList();
 
-    GiantModel(Health health, Fatigue fatigue, Nourishment nourishment) {
+    public GiantModel(Health health, Fatigue fatigue, Nourishment nourishment) {
         this.health = health;
         this.fatigue = fatigue;
         this.nourishment = nourishment;
+        giantModelsList.setGiantModelsList(this);
     }
 
     public Health getHealth() {
@@ -37,7 +42,10 @@ public class GiantModel {
 
     @Override
     public String toString() {
-
-        return "";
+        return "GiantModel{" +
+                "health=" + health +
+                ", fatigue=" + fatigue +
+                ", nourishment=" + nourishment +
+                '}';
     }
 }

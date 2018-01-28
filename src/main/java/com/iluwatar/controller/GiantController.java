@@ -40,6 +40,6 @@ public class GiantController {
     }
 
     public void updateView() {
-
+        this.giantView.displayGiant(giantModel);
     }
 }
